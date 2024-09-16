@@ -57,11 +57,10 @@ form {
   
   /* Responsive Styles */
 @media (max-width: 768px) {
-  .contact {
+  div.contact {
       padding-left: 1rem;
       padding-top: 1rem;
-      width: 100%;
-  }
+    }
 
   .info {
       flex-direction: column;
