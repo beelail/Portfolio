@@ -180,3 +180,53 @@ div.profile p{
     transform: scale(1.1); /* Zoom in by 1.2 times on hover */
     filter:contrast(1.3);
   }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        column-gap: 0;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .links a {
+        margin-bottom: 10px;
+    }
+
+    .Home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .MyImage {
+        width: 80%;
+    }
+
+    div.name, div.profile {
+        width: 100%;
+        text-align: center;
+        font-size: 4pc;
+    }
+
+    div.profile {
+        left: 0;
+        top: 0;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .pl, .others {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pl div, .others div {
+        width: 90%;
+    }
+}
