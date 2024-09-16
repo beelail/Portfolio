@@ -33,12 +33,8 @@ header {
    
 }
 
-
-
-
 .scrolled {
     background-color: rgb(0, 0, 0, 0.7); /* Change to your preferred color */
-   
     column-gap: 60%;
 }
 
@@ -185,40 +181,75 @@ div.profile p{
 @media (max-width: 768px) {
     header {
         padding: 10px;
-        flex-direction: column;
+        max-width: 50%;
+        width: 30%;
+        flex-direction: row;
         align-items: flex-start;
         column-gap: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        z-index: 100;
+    
     }
 
     .links {
-        flex-direction: column;
+        flex-direction: row;
+       
+        width: 30%;
         align-items: flex-start;
+        max-width: 100%;
+        margin-top: 1rem;
     }
 
     .links a {
         margin-bottom: 10px;
+        font-weight:300;
+        font-size: small;
     }
-
+  .scrolled{
+    background-color: transparent;
+  }
+    body:has(header.scrolled) .links {
+        display: none;
+    }
+    
+    .links a:hover{
+        text-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+   
+    .resume{
+        border: 2px solid #000000;
+        padding: 2px;
+    }
+    .resume:hover{
+        background-color: beige;
+    }
     .Home {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
     .MyImage {
         width: 80%;
+    
     }
-
-    div.name, div.profile {
-        width: 100%;
-        text-align: center;
-        font-size: 4pc;
-    }
+div.name{
+    font-size: xx-large;
+    position: relative;
+    top:7rem;
+ 
+    margin-right:15rem ;
+}
+    
 
     div.profile {
         left: 0;
         top: 0;
         height: auto;
         border-radius: 0;
+        text-align: left;
+        font-size:x-large ;
     }
 
     .pl, .others {
@@ -227,6 +258,7 @@ div.profile p{
     }
 
     .pl div, .others div {
-        width: 90%;
+        width: 50%;
+        margin-bottom: 1rem;
     }
 }
