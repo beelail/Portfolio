@@ -180,7 +180,7 @@ div.profile p{
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
-        padding: 8px;
+        padding: 7px;
         max-width: 50%;
         width: 30%;
         flex-direction: row;
@@ -192,18 +192,17 @@ div.profile p{
     
     }
     .logo{
-        width: 70px;
-        height: 50px;
+        width: 60px;
+        height: 40px;
         border: none;
         border-radius: 20px;
-        margin-left: -2%;
+        margin-left: -7%;
      
        
      }
 
     .links {
         flex-direction: row;
-       
         width: 30%;
         align-items: flex-start;
         max-width: 100%;
@@ -247,8 +246,7 @@ div.name{
     font-size: xx-large;
     position: relative;
     top:7rem;
- 
-    margin-right:15rem ;
+    margin-right:12rem ;
 }
     
 
