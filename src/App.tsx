@@ -15,7 +15,7 @@ function App() {
         
         <div className="name">ELAKREMI <br/>Bilel</div>
         
-            <img src="/Portfolio/me.png" alt="Not Supported" className="MyImage"/>
+            <img src="/Portfolio/img/me.png" alt="Not Supported" className="MyImage"/>
         
     <div className="profile">
         <p>Dedicated and results-driven computer science graduate with honors degree,

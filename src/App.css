@@ -22,7 +22,7 @@ body {
   border: none;
   border-radius: 1%;
   filter: contrast(1.25);
-  z-index: -1;
+  z-index: 100;
 }
 
 div.name{
@@ -152,12 +152,12 @@ div.profile p{
       align-items: center;
       justify-content: center;
   }
-
-  .MyImage {
-      width: 80%;
-      
-  
+  .MyImage{
+   
+    z-index: 1;
+    width: 80%;
   }
+ 
 div.name{
   font-size: x-large;
   position: relative;
@@ -192,5 +192,8 @@ div.name{
       width: 15rem; 
       height: 10rem;
   }
+
+
+
 
 }

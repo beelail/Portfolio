@@ -4,7 +4,7 @@ import './header.css';
 const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null); // Add button ref
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +23,17 @@ const Header = () => {
       }
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        buttonRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        dropdownRef.current.classList.remove("show");
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
 
     const btn = buttonRef.current;
@@ -30,22 +41,27 @@ const Header = () => {
       btn.addEventListener("click", handleButtonClick);
     }
 
+    document.addEventListener("click", handleClickOutside);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (btn) {
         btn.removeEventListener("click", handleButtonClick);
       }
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
   return (
-
     <header ref={headerRef} id="header">
-     
-     
       <div className="logo">
         <a href="#Home">
-          <img src="/Portfolio/logo.png" alt="Logo" className="img-logo"   style={{ width: '200px', height: '80px', objectFit: 'contain' }} />
+          <img
+            src="/Portfolio/logo.png"
+            alt="Logo"
+            className="img-logo"
+            style={{ width: '200px', height: '80px', objectFit: 'contain' }}
+          />
         </a>
       </div>
       <nav className="links">
@@ -54,40 +70,34 @@ const Header = () => {
         <a href="#Skills">Skills</a>
         <a href="#Projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a className="resume" href="/Portfolio/cv-anglais.pdf" download> Resume </a>
-      </nav>
-
-
-
-
-
-
- <button className="menu-button" ref={buttonRef} id ="my-button" >
-            <img src="/Portfolio/list-ul-alt-svgrepo-com.png" alt="not Supported" style={{width :'40px', height:'auto'}} />
-       </button>
-    
-  <div className="welcome-phrase"><h2>Welcome</h2></div>
-
-  <div className="dropdown-container" ref={dropdownRef}>
-     
- 
-       <div  id="dropdownMenu" />
-            <a href="#Home">Home</a>
-            <a href="#Experience">Experience</a>
-            <a href="#Skills">Skills</a>
-            <a href="#Projects">Projects</a>
-            <a href="#contact">Contact</a>
-         <a className="resume" href="/Portfolio/cv-anglais.pdf" download>
+        <a className="resume" href="/Portfolio/cv-anglais.pdf" download>
           Resume
         </a>
-   
-      
-  </div>
+      </nav>
 
-  
+      <button className="menu-button" ref={buttonRef} id="my-button">
+        <img
+          src="/Portfolio/list-ul-alt-svgrepo-com.png"
+          alt="not Supported"
+          style={{ width: '40px', height: 'auto' }}
+        />
+      </button>
 
+      <div className="welcome-phrase">
+        <h2>Welcome</h2>
+      </div>
 
-
+      <div className="dropdown-container" ref={dropdownRef}>
+        <div id="dropdownMenu" />
+        <a href="#Home">Home</a>
+        <a href="#Experience">Experience</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a className="resume" href="/Portfolio/cv-anglais.pdf" download>
+          Resume
+        </a>
+      </div>
     </header>
   );
 };
