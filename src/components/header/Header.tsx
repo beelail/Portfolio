@@ -94,7 +94,7 @@ const Header = () => {
         <a href="#Skills">Skills</a>
         <a href="#Projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a className="resume" href="/Portfolio/cv-anglais.pdf" download>
+        <a className="resume" href="/Portfolio/cv-francais.pdf" download>
           Resume
         </a>
       </div>
